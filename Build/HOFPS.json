@@ -1,0 +1,17 @@
+{
+"companyName": "Mforoud86",
+"productName": "Hover Ocean",
+"productVersion": "1.15",
+"dataUrl": "HOFPS.data.unityweb",
+"wasmCodeUrl": "HOFPS.wasm.code.unityweb",
+"wasmFrameworkUrl": "HOFPS.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"backgroundUrl": "HOFPS.jpg",
+"splashScreenStyle": "Light",
+"backgroundColor": "#FFFFFF",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.11f1"
+}
