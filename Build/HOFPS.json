@@ -1,7 +1,7 @@
 {
 "companyName": "Mforoud86",
 "productName": "Hover Ocean",
-"productVersion": "1.15",
+"productVersion": "2.4.3",
 "dataUrl": "HOFPS.data.unityweb",
 "wasmCodeUrl": "HOFPS.wasm.code.unityweb",
 "wasmFrameworkUrl": "HOFPS.wasm.framework.unityweb",
