@@ -2,28 +2,155 @@
 <html lang="en-us">
 
 <head>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Hover Ocean</title>
 	<link rel="shortcut icon" href="TemplateData/favicon.ico">
 	<link rel="stylesheet" href="TemplateData/style.css">
 	<script src="TemplateData/UnityProgress.js">
+
 	</script>
 	<script src="Build/UnityLoader.js">
-	</script>
-	<script>
-		var unityInstance = UnityLoader.instantiate("unityContainer", "Build/HOFPS.json", {onProgress: UnityProgress});
+
 	</script>
 </head>
 
-<body>
-	<div class="webgl-content" style="width: 100%; height: 100%">
-		<div id="unityContainer" style="width: 100%; height: 100%"></div>
-		<!--<div class="footer">
+<!--<div class="footer">
         <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
 				<div class="title">Hover Ocean</div>
       </div>-->
-	</div>
-</body>
 
+<body>
+	<script>
+		setFunction(function(){mhON();},function(){mhOFF();},'startBtn');
+		function setFunction(menter, mleave, id){
+			document.getElementById(id).onmouseenter = menter;
+		document.getElementById(id).onmouseleave = mleave;
+		}
+		function mhON(){
+	//document.getElementById('startBtn').innerHTML = 'Click to load';
+}
+function mhOFF(){
+	//document.getElementById('startBtn').innerHTML = 'Load Game';
+}
+		function loadGame(){
+		setFunction(function(){},function(){},'startBtn');
+		document.getElementById('startBtn').innerHTML = 'Loading...';
+			//document.getElementsByClassName("crisp-client").style.display = "none";
+			setTimeout(function(){
+				document.write("<title>Hover Ocean</title><div class='webgl-content' style='width: 100%; height: 100%;'><div id='unityContainer' style='width: 100%; height: 100%'></div></div>");
+			var unityInstance = UnityLoader.instantiate("unityContainer", "Build/HOFPS.json", {onProgress: UnityProgress});
+			},2000);
+		}
+		function loadPrime(){
+			location.replace("chat");
+		}
+	</script>
+	<div class="container">
+		<h1 style="font-family: 'Roboto Mono', monospace; font-size: 40px;">Hover Ocean</h1>
+	<button id="startBtn" class="big-button" onclick="loadGame();">Load Game</button>
+	<br><br><h1 style="font-family: 'Roboto Mono', monospace;">OR</h2>
+	<button id="startBtn" class="big-button" onclick="loadPrime();">Load Chat</button></div>
+
+</body>
+<style>
+	:root {
+  --backgroundColor: rgba(255, 218, 97);
+  --colorShadeA: rgb(112, 85, 72);
+  --colorShadeB: rgb(181, 3, 0);
+  --colorShadeC: rgb(222, 73, 71);
+  --colorShadeD: rgb(232, 81, 79);
+  --colorShadeE: rgb(255, 89, 87);
+}
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'OpenSans', sans-serif;
+  font-size: 1rem;
+  line-height: 2;
+  display: flex;
+          align-items: center;
+          justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  background: var(--backgroundColor);
+}
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding:  40px 0px;
+  width: 400px;
+}
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: 2.5rem;
+    color:var(--colorShadeA);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: inherit;
+}
+
+button.big-button {
+	font-family: 'Roboto Mono', monospace;
+   padding: 1em 2em;
+   border: 2px solid var(--colorShadeA);
+  border-radius: 1em;
+  background: var(--colorShadeE);
+transform-style: preserve-3d;
+   transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+button.big-button::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--colorShadeC);
+  border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
+ transform: translate3d(0, 0.75em, -1em);
+     transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+
+button.big-button:hover {
+  background: var(--colorShadeD);
+  transform: translate(0, 0.375em);
+}
+
+button.big-button:hover::before {
+  transform: translate3d(0, 0.75em, -1em);
+}
+
+button.big-button:active {
+            transform: translate(0em, 0.75em);
+}
+
+button.big-button:active::before {
+  transform: translate3d(0, 0, -1em);
+  
+      box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+
+}
+
+</style>
 </html>
